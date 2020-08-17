@@ -6,3 +6,6 @@ __Requirements__
 - Numpy
 - OpenCV
 - Matplotlib
+
+__Example__
+![Pose image](media/image_pose.jpg)
