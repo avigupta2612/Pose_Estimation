@@ -8,4 +8,6 @@ __Requirements__
 - Matplotlib
 
 __Example__
-![Pose image](media/image_pose.jpg)
+<p align='center'>
+  <img src='https://github.com/avigupta2612/Pose_Estimation/blob/master/media/image_pose.jpeg' />
+</p>
