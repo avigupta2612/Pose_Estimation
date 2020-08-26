@@ -2,8 +2,14 @@ import cv2
 from model import PoseEstimator
 from utils import *
 import matplotlib.pyplot as plt
+import argparse
 
-img_path = 'media/image.jpg'
+parser = argparse.ArgumentParser(description= 'Parse image path')
+parser.add_argument('image_path', metavar='path', type=str,
+                    help= 'Parse image path')
+args = parser.parse_args()
+
+img_path = args.image_path
 img = cv2.imread(img_path)
 estimator = PoseEstimator()
 keypoint_dict = estimator(img)

@@ -4,6 +4,12 @@ import numpy as np
 from model import PoseEstimator
 import matplotlib.pyplot as plt
 from utils import *
+import argparse
+
+parser = argparse.ArgumentParser(description='Live webcam video demo')
+parser.add_argument('time', metavar='T', type=int,
+                    help='Parse video record time')
+args = parser.parse_args()
 
 def record_video(capture_time):
     cap = cv2.VideoCapture(0)
@@ -42,7 +48,7 @@ def display_pose(frames, pose_frames):
         plt.show()
     cv2.destroyAllWindows()
 
-frames = record_video(1)
+frames = record_video(args.time)
 print("Video Recorded")
 print(np.shape(frames))
 pose_frames = pose_estimator(frames)
