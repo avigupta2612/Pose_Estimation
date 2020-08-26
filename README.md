@@ -7,6 +7,14 @@ __Requirements__
 - OpenCV
 - Matplotlib
 
+### To Run
+- __Image:__ </br>
+`python image.py media/image.jpg`
+- __Recorded Video:__</br>
+`python video.py media/example.mp4`
+- __Live Video:__</br>
+`python webcam_video.py 10`
+
 __Example__
 <p align='center'>
   <img src='https://github.com/avigupta2612/Pose_Estimation/blob/master/media/image_pose.jpeg' />
