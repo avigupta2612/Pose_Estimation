@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 from model import PoseEstimator
@@ -20,7 +19,7 @@ while videoclip.isOpened():
         break
     
     pred_dict = estimator(frame)
-    keypoints = estimator.get_keypoints(pred_dict, score_threshold=0.99)
+    keypoints = estimator.get_keypoints(pred_dict, score_threshold=0.9)
     
     frame_dst = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     frame_dst = cv2.merge([frame_dst] * 3)

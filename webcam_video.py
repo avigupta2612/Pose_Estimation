@@ -7,11 +7,21 @@ from utils import *
 import argparse
 
 parser = argparse.ArgumentParser(description='Live webcam video demo')
-parser.add_argument('time', metavar='T', type=int,
+parser.add_argument('time', metavar='t', type=int,
                     help='Parse video record time')
 args = parser.parse_args()
 
 def record_video(capture_time):
+    """
+    Records video through webcam
+
+    Arguments
+    ---------
+
+    capture_time : int, default = None
+        Video capture time in seconds
+    """
+
     cap = cv2.VideoCapture(0)
     start_time = time.time()
     frames = []
@@ -27,11 +37,21 @@ def record_video(capture_time):
     return frames
 
 def pose_estimator(frames):
+    """
+    Run pose estimator model on recorded frames
+
+    Arguments
+    ---------
+
+    frames: array, default=None
+        Array of frames recorded
+    """
+
     estimator = PoseEstimator()
     pose_frames = []
     for frame in frames:
         keypoints_dictionary = estimator(frame)
-        keypoints = estimator.get_keypoints(keypoints_dictionary, score_threshold=0.99)
+        keypoints = estimator.get_keypoints(keypoints_dictionary, score_threshold=0.9)
         pose_frames.append(keypoints)
 
     return pose_frames
@@ -50,7 +70,7 @@ def display_pose(frames, pose_frames):
 
 frames = record_video(args.time)
 print("Video Recorded")
-print(np.shape(frames))
+print("Number of frames ", format(np.shape(frames)[0]))
 pose_frames = pose_estimator(frames)
 print("Poses Recorded")
 display_pose(frames, pose_frames)

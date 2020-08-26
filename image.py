@@ -10,10 +10,16 @@ parser.add_argument('image_path', metavar='path', type=str,
 args = parser.parse_args()
 
 img_path = args.image_path
+
+# Read image from path
 img = cv2.imread(img_path)
+
+# Initialize model object
 estimator = PoseEstimator()
 keypoint_dict = estimator(img)
 keypoints = estimator.get_keypoints(keypoint_dict, score_threshold= 0.9)
+
+# Plot the generated Pose
 frame_dst = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 frame_dst = cv2.merge([frame_dst] * 3)
 overlay_k = draw_body_connections(img, keypoints, thickness=2, alpha=0.7)
