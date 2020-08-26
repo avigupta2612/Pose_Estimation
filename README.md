@@ -22,7 +22,7 @@ python video.py media/example.mp4
 ```
 - __Live Video:__</br>
 
-#Parse video record time
+#Parse video record time (in seconds)
 ```
 python webcam_video.py 10
 ```

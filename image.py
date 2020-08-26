@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import argparse
 
 parser = argparse.ArgumentParser(description= 'Parse image path')
-parser.add_argument('image_path', metavar='path', type=str,
+parser.add_argument('image_path', metavar='ipath', type=str,
                     help= 'Parse image path')
 args = parser.parse_args()
 
@@ -28,3 +28,4 @@ frame_dst = np.hstack((img, overlay_k))
 frame_img = cv2.cvtColor(frame_dst, cv2.COLOR_BGR2RGB)
 plt.imshow(frame_img)
 plt.show()
+
