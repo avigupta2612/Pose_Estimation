@@ -10,17 +10,19 @@ __Requirements__
 ## To Run
 - __Image:__ </br>
 
-__#parse image path__
+#Parse image path
 ```
 python image.py media/image.jpg
 ```
 - __Recorded Video:__</br>
-__#parse video path__
+
+#Parse video path
 ```
 python video.py media/example.mp4
 ```
 - __Live Video:__</br>
-__#parse video record time__
+
+#Parse video record time
 ```
 python webcam_video.py 10
 ```
